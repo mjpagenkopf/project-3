@@ -1,8 +1,46 @@
-export default function Baseball() {
-    return (
-      <section className='w-full p-8 bg-gray-100'>
-        <h2 className='py-4 text-center text-gray-600 text-2xl font-bold uppercase '>
-          Baseball     </h2>
-      </section>
+import React, { Component, Fragment } from "react";
+import { ApolloProvider } from "react-apollo";
+import Search from "../baseball/Search"; //./apolloClient
+import BaseballItem from "../baseball/BasebalItem"; // ./StarredRepos
+import TokenForm from "./TokenForm";
+import Results from "../baseball/Results"; // ./Status
+
+
+function Baseball() {
+
+return (
+    <ApolloProvider client={apolloClient}>
+        <h1>Baseball</h1>
+       
+          <Fragment>
+            <Results />
+            <BaseballItem />
+          </Fragment>
+    
+      </ApolloProvider>
     );
+
 }
+
+export default Baseball;
+
+
+{/* <Query query={STATUS_QUERY}>
+        {({data, loading}) => {
+            if(loading) {
+                return <span>loading...</span>
+            }
+            return <span>{data.status.status}</span>
+        }}
+    </Query> */}
+
+
+
+
+
+
+
+
+
+
+

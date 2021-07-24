@@ -3,7 +3,7 @@ import Header from './Header';
 import { pageComponents } from './pages';
 import { pages } from '../assets/data/projectSec';
 
-export default function PortfolioSite() {
+export default function ProjectSite() {
   return (
     <div className='flex flex-col min-h-screen relative overflow-hidden'>
       <BrowserRouter>
