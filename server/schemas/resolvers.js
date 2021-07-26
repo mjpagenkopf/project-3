@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-const { AuthenticationError } = require('apollo-server-express');
-const { User, Thought } = require('../models');
-const { signToken } = require('../utils/auth');
-
-const resolvers = {
-  Query: {};
-
-  Mutation: {};
-
-module.exports = resolvers;
-=======
 const { Player, Team } = require('../models');
 
 const resolvers = {
@@ -30,4 +18,3 @@ const resolvers = {
 }
 
 module.export = resolvers
->>>>>>> main

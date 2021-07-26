@@ -1,41 +1,26 @@
-import React from 'react'
-import { ApolloClient, InMemoryCache } from "apollo-client";
-import { ApolloLink } from "apollo-link";
-import { HttpLink } from "apollo-link-http";
-import { RestLink } from "apollo-link-rest";
+import React, { useEffect, useState } from 'react';
+import API from '../../utils/API';
+import BaseballForm from './BaseballForm';
+import { Container } from "react-bootstrap";
 
-function Search () {
+function BaseballUtils() {
 
-
-    // const restLink = new RestLink({ uri: "https://www.thesportsdb.com/api/v1/json/1/search_all_teams.php?l=MLB/teams/idTeam/strTeam" });
-    const restLink = new RestLink({
-        endpoints: {
-            githubstatus: {
-              uri: "https://githubstatus.herokuapp.com"
-            }
-          }
-        });
+  const [inputValue, setInputValue] = useState('');
+  const [name, setName] = useState();
 
 
 
-    const httpLink = new HttpLink({ uri: "https://api.github.com/graphql" });
+  return (
+    <Container>
+      <h1>Seach Steam Sales</h1>
+        
+      <BaseballForm params={params} onParamChange={handleParamChange} />
+      {error && <h1>{handleError(error)}</h1>}
+    </Container>
+  );
+}
 
-    const client = new ApolloClient({
-        link: ApolloLink.from([ restLink, httpLink]),
-        cache
-    });
-   
-    }
-
-export default Search;
-
-
-
-
-
-
-
-
+export default BaseballUtils;
 
 
 
