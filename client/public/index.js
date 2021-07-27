@@ -1,20 +1,5 @@
-function search(e) {
-    e.preventDefault();
-    const name = document.querySelector("#name").value.trim();
-
-    localStorage.setItem("name", JSON.stringify(name));
-}
-
 function fetchPlayer () {
-    const playerName = JSON.parse(localstorage.getItem("name"))
-
-    fetch('https://football-pro.p.rapidapi.com/api/v2.0/players/search/' + playerName + '?tz=Europe%2FAmsterdam', {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "0c1a9a5c52msh230a7f2d99ccc15p10ad0djsn27e4137a93bc",
-		"x-rapidapi-host": "football-pro.p.rapidapi.com"
-	}
-})
+fetch('http://api.sportradar.us/nba/trial/v7/en/seasons/2020/REG/leaders.json?api_key=wtw6mrtmhdfrj62nbf5pvf2a')
 .then(response => {
 	console.log(response);
 })
@@ -25,6 +10,3 @@ function fetchPlayer () {
 	console.error(err);
 })
 }
-
-document.querySelector(".scrBtn").addEventListener("submit", search);
-fetchPlayer() 
