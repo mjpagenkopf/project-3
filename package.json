@@ -23,6 +23,7 @@
   "homepage": "https://github.com/mjpagenkopf/project-3#readme",
   "dependencies": {
     "concurrently": "^6.2.0",
+    "graphql": "^15.5.1",
     "if-env": "^1.0.4"
   }
 }

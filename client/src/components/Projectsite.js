@@ -1,9 +1,17 @@
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Header from './Header';
+import Login from './pages/Login/Login';
 import { pageComponents } from './pages';
 import { pages } from '../assets/data/projectSec';
 
-export default function PortfolioSite() {
+export default function Projectsite() {
+  const [token, setToken] = useState();
+
+  if(!token) {
+    return <Login setToken={setToken} />
+  }
+  
   return (
     <div className='flex flex-col min-h-screen relative overflow-hidden'>
       <BrowserRouter>
