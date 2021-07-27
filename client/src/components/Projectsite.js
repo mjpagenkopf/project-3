@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Header from './Header';
 import { pageComponents } from './pages';
-import { pages } from '../assets/data/projectSec';
+import { pages } from '../assets/data/projectSec'
 
 export default function ProjectSite() {
   return (
