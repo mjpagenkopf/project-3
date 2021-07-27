@@ -1,3 +1,17 @@
+
+import { gql } from 'graphql-tag';
+
+export const LOGIN = gql`
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        _id
+      }
+    }
+  }
+`;
+
 import { gql } from '@apollo/client';
 
 export const ADD_TEAM = gql`
@@ -29,3 +43,4 @@ export const ADD_PLAYER = gql `
         }
     }
 `
+
