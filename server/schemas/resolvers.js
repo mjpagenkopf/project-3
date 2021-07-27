@@ -9,8 +9,8 @@ Query: {
     players: async () => {
         return await Player.find({})
     },
-    team: async (parent, args) => {
-        return await Team.findById(args.id).populate('playersId')
+    team: async (parent, { teamId }) => {
+        return await Team.findOne({ _id: teamId }).populate('playersId')
     }
 },
 

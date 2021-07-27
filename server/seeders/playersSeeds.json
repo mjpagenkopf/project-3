@@ -1,7 +1,7 @@
 [
     {
         "name": "Tony DelVecchio",
-        "image": "https://humongous.fandom.com/wiki/Tony_Delvecchio?file=BYS_Tony.png",
+        "image": "https://static.wikia.nocookie.net/humongous/images/6/62/BYS_Tony.png",
         "position": "Center",
         "height": 76,
         "weight": 175,
@@ -16,7 +16,7 @@
     },
     {
         "name": "Pete Wheeler",
-        "image": "https://backyardsports.fandom.com/wiki/Pete_Wheeler?file=Pete_Wheeler.png",
+        "image": "https://static.wikia.nocookie.net/backyardsports/images/4/4c/Pete_Wheeler.png",
         "position": "Power Forward",
         "height": 70,
         "weight": 165,
@@ -61,7 +61,7 @@
     },
     {
         "name": "Kenny Kawaguchi",
-        "image": "https://backyardsports.fandom.com/wiki/Kenny_Kawaguchi?file=Kenny_2.jpg",
+        "image": "https://static.wikia.nocookie.net/humongous/images/c/c2/BYS_Kenny.png",
         "position": "Point Guard",
         "height": 65,
         "weight": 120,
