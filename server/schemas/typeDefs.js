@@ -2,7 +2,7 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
     type Team {
-        _id: ID
+        _id: ID!
         name: String
         coach: String
         season: String
@@ -10,7 +10,7 @@ const typeDefs = gql`
     }
 
     type Player {
-        _id: ID
+        _id: ID!
         name: String
         image: String
         position: String
@@ -30,7 +30,7 @@ const typeDefs = gql`
     type Query {
         teams: [Team]
         players: [Player]
-        team(id: ID!): Team
+        team(teamId: ID!): Team
     }
 
     type Mutation {

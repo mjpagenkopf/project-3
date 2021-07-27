@@ -1,4 +1,9 @@
+// import xxx from '../../../../server/public/js/index.js'
+
 const sideNav = () => {
+
+
+
     return (
         <nav className="sidebar"id="sidebar">
             <div class="sidebar-header">

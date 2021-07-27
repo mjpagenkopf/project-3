@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Header from './Header';
 import { pageComponents } from './pages';
 import { pages } from '../assets/data/projectSec'
+import SingleTeam from '../components/pages/SingleTeam'
 
 export default function ProjectSite() {
   return (
@@ -19,6 +20,7 @@ export default function ProjectSite() {
                 component={pageComponents[pageName]}
               />
             ))}
+            <Route exact path="/teams/:teamId" component={SingleTeam} />
             <Route render={() => <Redirect to='/' />} />
           </Switch>
         </main>

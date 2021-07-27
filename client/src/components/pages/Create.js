@@ -18,10 +18,10 @@ export default function Create() {
         <TopNav/>
       </section>
       <div className="flex-comps">
-        <section>
+        <div>
           <SideNav/>
-        </section>
-        <section className='w-full p-8 bg-gray-100'>
+        </div>
+        <div className='w-full p-8 bg-gray-100'>
           <div className="flex-row justify-center">
             <div className="col-12 col-md-10 my-3">
                 {loading ? (
@@ -36,7 +36,7 @@ export default function Create() {
                 )}
             </div>
           </div>
-        </section>
+        </div>
       </div>
       </div>
     );
