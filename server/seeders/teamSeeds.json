@@ -1,18 +1,7 @@
 [
-    {
+    {   
         "name": "Chuckers",
-        "coach": "Brad Stevens"
-    },
-    {
-        "name": "Sneakers",
-        "coach": "Larry Brown"
-    },
-    {
-        "name": "Slammers",
-        "coach": "Howard Hobson"
-    },
-    {
-        "name": "Sneakers",
-        "coach": "Jim Snyder"
+        "coach": "Brad Stevens",
+        "season": 2021
     }
 ]

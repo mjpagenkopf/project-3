@@ -1,21 +1,31 @@
 const db = require('../config/connection');
-const { Player, Team } = require('../models');
-const playerSeeds = require('./playerSeeds.json');
-const teamSeeds = require('./teamSeeds.json')
+const { Team, Player } = require('../models');
+const teamSeeds = require('./teamSeeds.json');
+const playersSeeds = require('./playersSeeds.json');
 
 db.once('open', async () => {
-    try{
-        await Player.deleteMany({});
-        await Team.deleteMany({});
+    await Team.deleteMany({});
+    await Player.deleteMany({});
 
-        await Player.create(playerSeeds);
-        await Team.create(teamSeeds);
-
-    } catch (err) {
-        console.error(err);
-        process.exit(1);
+    const teams = await Team.insertMany(teamSeeds);
+    const players = await Player.insertMany(playersSeeds)
+    const tempTeam = await teams[Math.floor(Math.random() * teams.length)]
+    const tempPlay = await players[Math.floor(Math.random() * players.length)]
+    const x = teams.map(team => {
+        return team._id
+    })
+    
+    for (player of players) {
+        tempTeam.playersId.push(player); 
+        await tempTeam.save();
     }
 
-    console.log('Seeding finished!');
-    process.exit(0);
+    for (team of teams) {
+        tempPlay.teamsId.push(team)
+        await tempPlay.save()
+    }
+
+
+  console.log('all done!');
+  process.exit(0);
 })

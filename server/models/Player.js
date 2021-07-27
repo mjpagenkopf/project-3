@@ -1,94 +1,71 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const {Schema, model} = require("mongoose");
 
 const PlayerSchema = new Schema({
-  name: {
-    type: String,
-    trim: true,
-    required: "String is Required"
-  },
+
+    name: {
+      type: String,
+      trim: true
+    },
+    
+    image: {
+      type: String,
+      trim: true
+    },
   
-  image: {
-    type: String,
-    trim: true
-  },
-
-  position: {
-    type: String,
-    trim: true
-  },
-
-  height: {
-    type: String,
-    required: true
-  },
-
-  weight: {
-    type: Number,
-    required: true
-  },
-
-  age: {
-    type: Number,
-    required: true
-  },
-
-  number: {
-    type: Number,
-    required: true
-  },
+    position: {
+      type: String,
+      trim: true
+    },
   
-  season: [
-    {
-      
-      year: {
-        type: Number,
-        required: true
-      },
+    height: {
+      type: String
+    },
+  
+    weight: {
+      type: String
+    },
+  
+    age: {
+      type: String
+    },
+  
+    number: {
+      type: String
+    },
 
-      stats: [
-          {              
-              team: {
-                  type: String,
-                  trim: true,
-                  required: "String is Required"
-              },
-              
-              games: {
-                  type: Number,
-                  required: true
-              },
-              
-              points: {
-                  type: Number,
-                  required: true
-              },
-              
-              assists: {
-                  type: Number,
-                  required: true
-              },
-              
-              rebounds: {
-                  type: Number,
-                  required: true
-              },
-              
-              steals: {
-                  type: Number,
-                  required: true
-              },
-              
-              blocks: {
-                  type: Number,
-                  required: true
-              },
-          }
-      ],
-    }
+    games: {
+      type: String
+    },
+          
+    points: {
+      type: String
+    },
+          
+    assists: {
+      type: String
+    },
+          
+    rebounds: {
+      type: String
+    },
+          
+    steals: {
+      type: String
+    },
+          
+    blocks: {
+      type: String
+    },
+
+    teamsId: [
+      {
+      type: Schema.Types.ObjectId,
+      ref:"Team"
+      }
   ]
-});
 
-const Player = mongoose.model("Player", PlayerSchema);
+  })
 
-module.exports = Player;
+  const Player = model("Player", PlayerSchema);
+
+  module.exports = Player

@@ -1,7 +1,6 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const {Schema, model} = require("mongoose");
 
-const TeamSchema = new Schema({
+const TeamSchema = new Schema({  
   name: {
     type: String,
     trim: true,
@@ -14,15 +13,20 @@ const TeamSchema = new Schema({
     required: "String is Required"
   },
 
-  players: [
+  season: {
+    type: Number,
+    required: true
+  },
+
+  playersId: [
     {
-      type: Schema.Types.ObjectId,
-      ref: "Player"
+    type: Schema.Types.ObjectId,
+    ref: "Player"
     }
-  ],
+  ]
 
 });
 
-const Team = mongoose.model("Team", TeamSchema);
+const Team = model("Team", TeamSchema);
 
-module.exports = Team;
+module.exports = Team
