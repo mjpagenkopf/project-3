@@ -4,7 +4,7 @@ const db = require('./config/connection');
 const { ApolloServer } = require('apollo-server-express');
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
-import axios from "axios";
+const axios = require('axios');
 // const routes = require('./routes');
 require('dotenv').config();
 
@@ -41,7 +41,8 @@ if (process.env.NODE_ENV === 'production') {
           },
           headers: {
           'x-rapidapi-key': process.env.REACT_APP_API_KEY,
-          // 'x-rapidapi-host': 'mlb-data.p.rapidapi.com'
+          'x-rapidapi-host': 'mlb-data.p.rapidapi.com',
+          
           },
       })
 
@@ -53,7 +54,7 @@ if (process.env.NODE_ENV === 'production') {
       // playerPosition: data.search_player_all.queryResults.row.position,
       // playerID: data.search_player_all.queryResults.row.player_id,
     }
-
+      console.log(playerData)
     return res.send(playerData)
     } catch (e) {
     console.log(e)

@@ -1,26 +1,12 @@
 import React, { useState } from "react";
 import axios from 'axios';
 // import BaseballForm from './BaseballForm';
-const express = require('express');
 require('dotenv').config();
-const app = express();
-const PORT = process.env.PORT || 3001;
+
 
 
 
 function BaseballList() {
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   let [name, setName] = useState('Mike Trout')
