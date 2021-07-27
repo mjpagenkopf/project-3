@@ -27,6 +27,8 @@ code {
   font-size: 45px;
   text-align: center;
   color: white;
+
+text-align: center
 }
 
 .space-x-2 {
@@ -38,4 +40,23 @@ code {
 .bg-gray-700 {
   text-align: center;
   padding-top: 30px;
+}
+
+.head-comp {
+  display: inline-flex
+}
+
+.head-create {
+  position:absolute;
+  top:20px;
+  right:30px;
+  padding: 15px;
+  background-color: green;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 10px
+}
+
+.create {
+  display: flex
 }

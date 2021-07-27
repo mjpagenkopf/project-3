@@ -24,8 +24,98 @@
   color: white;
 }
 
+.tddata {
+  text-align: center;
+}
+
+.tdName {
+  padding-top: 7px
+}
+
 .App-link {
   color: #61dafb;
+}
+
+.sidebar {
+  background-color: white
+}
+
+.scoreCard {
+  background-color: white;
+}
+
+.flex-comps {
+  display:flex
+}
+
+.teamCard {
+  background-color: rgb(238, 131, 31);
+}
+
+.teamCardHeader {
+  display:flex;
+  justify-content: space-between;  
+}
+
+.teamName {
+  font-size: 30px;
+  color: white
+}
+
+.teamButton {
+  background-color: rgb(99, 92, 92);
+  padding: 1px;
+  border-color: rgb(24, 22, 22);
+}
+
+.teamButton:hover {
+  background-color: rgb(24, 22, 22);
+}
+
+.teamPagePlayerCard {
+  color:rgb(24, 22, 22)
+}
+
+.singleTeamPlayerFlex {
+  display: flex;
+}
+
+.singleTeamPlayerList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.singleTeamPlayerStats {
+  margin-left: 50px
+}
+
+.card-flip > div {
+  backface-visibility: hidden;
+  transition: transform 300ms;
+  transition-timing-function: linear;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+}
+
+.card-front {
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+}
+
+.card-flip:hover .card-front {
+  transform: rotateY(-180deg);
+}
+  
+.card-flip:hover .card-back {
+  transform: rotateY(0deg);
 }
 
 @keyframes App-logo-spin {

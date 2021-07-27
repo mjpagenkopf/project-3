@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Header from './Header';
 import Login from './pages/Login/Login';
 import { pageComponents } from './pages';
-import { pages } from '../assets/data/projectSec';
+import { pages } from '../assets/data/projectSec'
+import SingleTeam from '../components/pages/SingleTeam'
 
 export default function Projectsite() {
   const [token, setToken] = useState();
@@ -27,6 +28,7 @@ export default function Projectsite() {
                 component={pageComponents[pageName]}
               />
             ))}
+            <Route exact path="/teams/:teamId" component={SingleTeam} />
             <Route render={() => <Redirect to='/' />} />
           </Switch>
         </main>
