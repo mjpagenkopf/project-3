@@ -1,9 +1,27 @@
 import React, { useState } from "react";
 import axios from 'axios';
 // import BaseballForm from './BaseballForm';
+const express = require('express');
+require('dotenv').config();
+const app = express();
+const PORT = process.env.PORT || 3001;
+
 
 
 function BaseballList() {
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   let [name, setName] = useState('Mike Trout')
   let [playerFullName, setPlayerFullName] = useState('')
@@ -18,7 +36,7 @@ function BaseballList() {
     setLoading(true)
     setError(false)
 
-    axios.get('/baseball/:name', { name })
+    axios.get(`/baseball/${name}`)
     .then((data) => {
       setPlayerFullName(data.playerFullName)
       setPlayerTeam(data.playerTeam)
