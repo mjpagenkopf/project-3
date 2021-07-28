@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import {useQuery} from '@apollo/client'
-import { QUERY_PLAYERS } from '../../utils/queries'
+import { QUERY_PLAYERS } from '../utils/queries'
 import PlayerForm from './PlayerForm'
 import PlayerList from './PlayerList'
 

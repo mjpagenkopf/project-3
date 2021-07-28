@@ -1,6 +1,6 @@
 import {useQuery} from '@apollo/client'
 import TeamList from './TeamList'
-import { QUERY_TEAMS } from '../../utils/queries'
+import { QUERY_TEAMS } from '../utils/queries'
 import TeamForm from './TeamForm'
 import SideNav from './SideNav'
 import TopNav from './topNav'

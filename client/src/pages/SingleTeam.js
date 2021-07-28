@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 
-import { QUERY_SINGLE_TEAM } from '../../utils/queries'
+import { QUERY_SINGLE_TEAM } from '../utils/queries'
 
 const SingleTeam = () => {
     const { teamId } = useParams()

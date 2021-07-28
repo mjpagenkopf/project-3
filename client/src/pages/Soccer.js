@@ -1,4 +1,4 @@
-export default function Football() {
+export default function Soccer() {
 
     return (
       <section className='w-full p-8 bg-gray-100'>

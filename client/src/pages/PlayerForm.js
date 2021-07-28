@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useMutation } from '@apollo/client'
-import { ADD_PLAYER } from '../../utils/mutations'
-import { QUERY_PLAYERS } from '../../utils/queries'
+import { ADD_PLAYER } from '../utils/mutations'
+import { QUERY_PLAYERS } from '../utils/queries'
 import { Button, Modal } from 'react-bootstrap'
 
 

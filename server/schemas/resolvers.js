@@ -1,7 +1,10 @@
 const { Team, Player } = require('../models');
+const queries = require('./queries');
+const mutations = require('./mutations');
 
 const resolvers = {
 Query: {
+    getUser: queries.getUser,
     teams: async () => {
         return await Team.find({}).populate('playersId')
     },
@@ -15,6 +18,8 @@ Query: {
 },
 
 Mutation: {
+    newUser: mutations.newUser,
+    login: mutations.login,
     addPlayer(parent, args) {
         const {name, image, position, height, weight, age, number, games, points, assists, rebounds, steals, blocks, teamId} = args;
         return Player.create({

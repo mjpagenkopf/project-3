@@ -68,3 +68,13 @@ text-align: center
 #sidebar {
   color: black;
 }
+
+.mb-3 {
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
