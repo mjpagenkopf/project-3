@@ -14,6 +14,7 @@ export default function Create() {
 
     return (
       <div>
+        <TeamForm />
       <section>
         <TopNav/>
       </section>
@@ -21,23 +22,20 @@ export default function Create() {
         <div>
           <SideNav/>
         </div>
-        <div className='w-full p-8 bg-gray-100'>
-          <div className="flex-row justify-center">
-            <div className="col-12 col-md-10 my-3">
+        <div className="container">
+          <div className="row">
+          <div className="col">
                 {loading ? (
                     <div>Loading...</div>
                 ) : (
-                  <div>
-                    <TeamForm />
                     <TeamList 
                         teams={teams}
                     />
-                  </div>
                 )}
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      </div>
+        </div>
+        </div>
     );
 }

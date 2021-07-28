@@ -6,12 +6,18 @@ Query: {
         return await Team.find({}).populate('playersId')
     },
 
+    team: async (parent, { teamId }) => {
+        return await Team.findOne({ _id: teamId }).populate('playersId')
+    },
+
     players: async () => {
         return await Player.find({})
     },
-    team: async (parent, { teamId }) => {
-        return await Team.findOne({ _id: teamId }).populate('playersId')
+
+    player: async () => {
+        return await Player.findOne({ _id: playerId })
     }
+
 },
 
 Mutation: {

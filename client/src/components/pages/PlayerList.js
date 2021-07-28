@@ -10,13 +10,13 @@ return (
         <table class="table">
             <thead>
                 <tr>
-                <th scope="col">Name</th>
-                <th className="tddata" scope="col">Games</th>
-                <th className="tddata" scope="col">Points</th>
-                <th className="tddata" scope="col">Assists</th>
-                <th className="tddata" scope="col">Rebounds</th>
-                <th className="tddata" scope="col">Steals</th>
-                <th  className="tddata" scope="col">Blocks</th>
+                    <th scope="col">Name</th>
+                    <th className="tddata" scope="col">Games</th>
+                    <th className="tddata" scope="col">Points</th>
+                    <th className="tddata" scope="col">Assists</th>
+                    <th className="tddata" scope="col">Rebounds</th>
+                    <th className="tddata" scope="col">Steals</th>
+                    <th  className="tddata" scope="col">Blocks</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,8 +24,7 @@ return (
             players.map((player) => (
                 <tr>
                     <Link
-                    to={`/${player._id}`}
-                    >
+                    to={`/${player._id}`}>
                     <td className="tdName">{player.name}</td>
                     </Link>
                     <td className="tddata">{player.games}</td>

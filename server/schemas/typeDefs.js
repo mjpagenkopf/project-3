@@ -31,6 +31,7 @@ const typeDefs = gql`
         teams: [Team]
         players: [Player]
         team(teamId: ID!): Team
+        player(playerId: ID!): Player
     }
 
     type Mutation {

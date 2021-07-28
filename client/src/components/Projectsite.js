@@ -3,6 +3,7 @@ import Header from './Header';
 import { pageComponents } from './pages';
 import { pages } from '../assets/data/projectSec'
 import SingleTeam from '../components/pages/SingleTeam'
+import SinglePlayer from '../components/pages/SinglePlayer'
 
 export default function PortfolioSite() {
   return (
@@ -21,6 +22,7 @@ export default function PortfolioSite() {
               />
             ))}
             <Route exact path="/teams/:teamId" component={SingleTeam} />
+            <Route exact path="/players/:playerId" component={SinglePlayer} />
             <Route render={() => <Redirect to='/' />} />
           </Switch>
         </main>

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import {useQuery} from '@apollo/client'
 import { QUERY_PLAYERS } from '../../utils/queries'
-import PlayerForm from './PlayerForm'
 import PlayerList from './PlayerList'
 
 const TeamList = ({ teams, title}) => {
@@ -26,14 +25,12 @@ return (
                       >
                       {team.name}
                       </Link>
-                      <PlayerForm />
                     </div>
                     <div>
                       <p>Coach: {team.coach}</p>
                       <p>Season {team.season}</p>
                     </div>
                   </div>
-                   <br />
                   <div style={{ fontSize: '1rem' }}>
                     <PlayerList 
                       players = {players}
