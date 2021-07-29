@@ -1,0 +1,76 @@
+import React, { useState } from "react";
+import axios from "axios";
+// import BaseballForm from './BaseballForm';
+
+
+function BaseballList() {
+  let [name, setName] = useState(0);
+  let [playerData, setPlayerData] = useState('');
+  let [loading, setLoading] = useState(false);
+  let [error, setError] = useState(false);
+
+  const fetchPlayer = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError(false);
+    
+    var options = {
+      method: "GET",
+      url: "http://lookup-service-prod.mlb.com/json/named.search_player_all.bam",
+      params: { sport_code: 'mlb', active_sw:'Y', name_part: `${ name }` },
+      headers: {
+        "Content-Type": "application/json"
+        // "x-rapidapi-key": process.env.X_RAPIDAPI_KEY,
+        // "x-rapidapi-host": process.env.X_RAPIDAPI_HOST,
+        // "Access-Control-Allow-Headers": "*",
+      },
+    };
+
+    axios
+      .request(options)
+      .then(function(response) {
+        console.log(response.data);
+        setPlayerData({
+           PlayerData: response.search_player_all.queryResults.row.name_display_first_last,
+        //   playerCountry: data.search_player_all.queryResults.row.birth_country,
+        //   playerTeam: data.search_player_all.queryResults.row.team_full,
+        //   playerPosition: data.search_player_all.queryResults.row.position,
+        //   playerID: data.search_player_all.queryResults.row.player_id,
+        // });
+      })
+      .catch((e) => {
+        setError(true);
+        console.log(e);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  });
+  
+  return (
+    <div>
+      <h2>Search Player</h2>
+      <form onSubmit={fetchPlayer}>
+        <fieldset>
+          <label>
+            Enter name
+            <input
+              type="text"
+              value={name}
+              placeholder="enter player"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </label>
+          <button type="submit">Get Player</button>
+        </fieldset>
+      </form>
+
+      <h2>Results</h2>
+      {loading && <p>Fetching player</p>}
+      {error && <p>Something went wrong</p>}
+    </div>
+  );
+}
+}
+
+export default BaseballList;

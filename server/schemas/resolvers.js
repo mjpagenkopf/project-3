@@ -39,6 +39,7 @@ Mutation: {
         return await Team.create({name, coach, season})
     }
 }
-}
+};
+
 
 module.exports = resolvers
