@@ -17,6 +17,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+<<<<<<< HEAD
+=======
+  background-color: rosybrown;
+  background-repeat: no-repeat;
+  background-size: cover;
+>>>>>>> 82d85d688d3d360901ba84d9cd998ed90a2403eb
   color: white;
   background-color: black;
 }

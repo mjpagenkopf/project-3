@@ -24,9 +24,6 @@
   color: white;
 }
 
-.tddata {
-  text-align: center;
-}
 
 .tdName {
   padding-top: 7px
@@ -57,6 +54,21 @@
   justify-content: space-between;  
 }
 
+.teamContainer {
+  width: 80%;
+}
+
+
+.teamButtonRemove {
+  position:absolute;
+  top: 10px;
+  right: 10px;
+  padding: 2px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
 .teamName {
   font-size: 30px;
   color: white
@@ -76,18 +88,49 @@
   color:rgb(24, 22, 22)
 }
 
+.singleTeamPlayerImage {
+  width: 360px;
+  height: 400px;
+}
+
+.container {
+  display:flex;
+}
+
+.row {
+  justify-content: space-evenly;
+}
+
 .singleTeamPlayerFlex {
   display: flex;
 }
 
 .singleTeamPlayerList {
+  text-align: center;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 .singleTeamPlayerStats {
-  margin-left: 50px
+  text-align: center;
+}
+
+.playerCardFront {
+  background-color: rgb(24, 22, 22);
+}
+
+.playerCardBack {
+  background-color: rgb(255, 186, 58);
+  width: 360px;
+  height: 450px;
+}
+
+.flexStats {
+  display: inline-block;
+  justify-content: space-between;
+}
+
+.padStat {
+  padding: 7px
 }
 
 .card-flip > div {
@@ -108,6 +151,10 @@
   transform: rotateY(180deg);
   position: absolute;
   top: 0;
+}
+
+.singlePlayerHeader {
+  text-align: center
 }
 
 .card-flip:hover .card-front {

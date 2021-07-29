@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Nav from './Nav';
+import banner from '../assets/banner.jpg'
 
 const navLinks = [
   {

@@ -4,42 +4,5 @@
       "lastName": "Test",
       "email": "ShirlT@mail.com",
       "password": "password02"
-    },
-    {
-      "firstName": "Jaleel",
-      "lastName": "Test",
-      "email": "JaleelT@mail.com",
-      "password": "password04"
-    },
-    {
-      "firstName": "Brandon",
-      "lastName": "Test",
-      "email": "BrandonT@mail.com",
-      "password": "password06"
-    },
-    {
-      "firstName": "Keesha",
-      "lastName": "Test",
-      "email": "KeeshaT@mail.com",
-      "password": "password08"
-    },
-    {
-      "firstName": "Gregory",
-      "lastName": "Test",
-      "email": "GregoryT@mail.com",
-      "password": "password10"
-    },
-  
-    {
-      "firstName": "David",
-      "lastName": "Test",
-      "email": "DavidT@mail.com",
-      "password": "password12"
-    },
-    {
-      "firstName": "Kevin",
-      "lastName": "Test",
-      "email": "KevinT@mail.com",
-      "password": "password14"
     }
   ]
