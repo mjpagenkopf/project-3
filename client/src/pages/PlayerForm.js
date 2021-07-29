@@ -1,6 +1,11 @@
 import { useState } from 'react'
 import { useMutation } from '@apollo/client'
+<<<<<<< HEAD:client/src/pages/PlayerForm.js
+import { ADD_PLAYER } from '../utils/mutations'
+import { QUERY_PLAYERS } from '../utils/queries'
+=======
 import { ADD_PLAYER } from '../../utils/mutations'
+>>>>>>> 82d85d688d3d360901ba84d9cd998ed90a2403eb:client/src/components/pages/PlayerForm.js
 import { Button, Modal } from 'react-bootstrap'
 
 

@@ -2,11 +2,15 @@ import { useParams } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { Link } from 'react-router-dom'
 
+<<<<<<< HEAD:client/src/pages/SingleTeam.js
+import { QUERY_SINGLE_TEAM } from '../utils/queries'
+=======
 
 import PlayerForm from './PlayerForm'
 import { QUERY_SINGLE_TEAM } from '../../utils/queries'
 import PlayerList from './PlayerList'
 import UpdatePlayerForm from './UpdatePlayerForm'
+>>>>>>> 82d85d688d3d360901ba84d9cd998ed90a2403eb:client/src/components/pages/SingleTeam.js
 
 const SingleTeam = () => {
     const { teamId } = useParams()

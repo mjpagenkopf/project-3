@@ -1,8 +1,8 @@
 [
-    {   
-        "firstName": "User",
-        "lastName": "Name",
-        "username": "user",
-        "password": "password"
+    {
+      "firstName": "Shirl",
+      "lastName": "Test",
+      "email": "ShirlT@mail.com",
+      "password": "password02"
     }
-]
+  ]

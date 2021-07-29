@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom'
+<<<<<<< HEAD:client/src/pages/TeamList.js
+import {useQuery} from '@apollo/client'
+import { QUERY_PLAYERS } from '../utils/queries'
+import PlayerForm from './PlayerForm'
+=======
 import {useQuery, useParams, useMutation} from '@apollo/client'
 import { QUERY_PLAYERS } from '../../utils/queries'
 import { REMOVE_TEAM } from '../../utils/mutations'
+>>>>>>> 82d85d688d3d360901ba84d9cd998ed90a2403eb:client/src/components/pages/TeamList.js
 import PlayerList from './PlayerList'
 
 const TeamList = ({ teams, title}) => {

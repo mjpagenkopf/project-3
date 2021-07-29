@@ -1,11 +1,11 @@
 import Home from './Home';
-import Football from './Football';
+import Soccer from './Soccer';
 import Basketball from './Basketball';
 import Baseball from './Baseball';
 
 export const pageComponents = {
   Home,
-  Football,
+  Soccer,
   Basketball,
   Baseball
 };

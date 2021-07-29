@@ -1,4 +1,5 @@
-export default function Football() {
+export default function Soccer() {
+  
   fetch('http://api.sportradar.us/nfl/official/trial/v5/en/games/2019/reg/schedule.xml?api_key= sc9p8zpy852chqbgyfj5c458')
 	.then(response => {
 		console.log(response);
