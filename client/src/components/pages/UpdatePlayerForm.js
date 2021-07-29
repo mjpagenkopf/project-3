@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { useMutation } from '@apollo/client'
-import { ADD_PLAYER } from '../../utils/mutations'
+import { UPDATE_STATS } from '../../utils/mutations'
 import { Button, Modal } from 'react-bootstrap'
 
 
-const PlayerForm = ({teamId}) => {
+const UpdatePlayerForm = ({id}) => {
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
     const [position, setPosition] = useState('');
-    const [height, setHeight] = useState('');     //only works when number set
+    const [height, setHeight] = useState('');
     const [weight, setWeight] = useState('')
     const [age, setAge] = useState('') 
     const [number, setNumber] = useState('')
@@ -23,23 +23,16 @@ const PlayerForm = ({teamId}) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
   
-    const [addPlayer, { error }] = useMutation(ADD_PLAYER) 
+    const [updatePlayer, { error }] = useMutation(UPDATE_STATS) 
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
     
         try {
-          const { data } = await addPlayer({
-            variables: { teamId, name, image, position, height, weight, age, number, games, points, assists, rebounds, steals, blocks },
+          const { data } = await updatePlayer({
+            variables: { id, games, points, assists, rebounds, steals, blocks },
           });
     
-          setName('');
-          setImage('')
-          setPosition('')
-          setHeight('')
-          setWeight('')
-          setAge('')
-          setNumber('')
           setGames('')
           setPoints('')
           setAssists('')
@@ -54,8 +47,9 @@ const PlayerForm = ({teamId}) => {
       return (
         <>
        <Button className="teamButton" variant="primary" onClick={handleShow}>
-        +Add Player
+        +Update Stats
        </Button>
+
        <Modal show={show} onHide={handleClose}>
          <Modal.Header closeButton>
            <Modal.Title>Where are you</Modal.Title>
@@ -65,58 +59,6 @@ const PlayerForm = ({teamId}) => {
          className="flex-row justify-center justify-space-between-md align-center"
          onSubmit={handleFormSubmit}
          >
-           <div class="form-group">
-             <input type="text" 
-             className="form-control" id="exampleFormControlInput1" 
-             onChange={(e) => setName(e.target.value)}
-             value={name}
-             placeholder="Player Name"/>
-           </div>
-           <div class="form-group">
-             <input type="text" 
-             className="form-control" id="exampleFormControlInput1" 
-             onChange={(e) => setImage(e.target.value)}
-             value={image}
-             placeholder="Add Image Url"/>
-           </div>
-           <div class="form-group">
-             <select class="form-control" id="exampleFormControlSelect1" onChange={(e) => setPosition(e.target.value)} value={position}>
-               <option value="" disabled selected hidden>Choose Position...</option>
-               <option value="Point Guard">Point Guard</option>
-               <option value="Shooting Guard">Shooting Guard</option>
-               <option value="Small Forward">Small Forward</option>
-               <option value="Power Forward">Power Forward</option>
-               <option value="Center">Center</option>
-             </select>
-           </div>
-           <div class="form-group">
-             <input type="text" 
-             className="form-control" id="exampleFormControlInput1" 
-             onChange={(e) => setHeight(e.target.value)}
-             value={height}
-             placeholder="Height"/>
-           </div>
-           <div class="form-group">
-             <input type="text" 
-             className="form-control" id="exampleFormControlInput1" 
-             onChange={(e) => setWeight(e.target.value)}
-             value={weight}
-             placeholder="Weight (lbs)"/>
-           </div>
-           <div class="form-group">
-             <input type="text" 
-             className="form-control" id="exampleFormControlInput1" 
-             onChange={(e) => setAge(e.target.value)}
-             value={age}
-             placeholder="Age"/>
-           </div>
-           <div class="form-group">
-             <input type="text" 
-             className="form-control" id="exampleFormControlInput1" 
-             onChange={(e) => setNumber(e.target.value)}
-             value={number}
-             placeholder="Jersey Number"/>
-           </div>
            <div class="form-group">
              <input type="text" 
              className="form-control" id="exampleFormControlInput1" 
@@ -179,4 +121,4 @@ const PlayerForm = ({teamId}) => {
        )
 }
 
-export default PlayerForm
+export default UpdatePlayerForm

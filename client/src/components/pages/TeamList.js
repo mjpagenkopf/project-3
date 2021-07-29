@@ -1,13 +1,26 @@
 import { Link } from 'react-router-dom'
-import {useQuery} from '@apollo/client'
+import {useQuery, useParams, useMutation} from '@apollo/client'
 import { QUERY_PLAYERS } from '../../utils/queries'
-import PlayerForm from './PlayerForm'
+import { REMOVE_TEAM } from '../../utils/mutations'
 import PlayerList from './PlayerList'
 
 const TeamList = ({ teams, title}) => {
   const { loading, data } = useQuery(QUERY_PLAYERS)
+  // const [removeTeam] = useMutation(REMOVE_TEAM,{
+  //   valiables: { teamId: teams._id } 
+  // })
+
+  // const handleRemove = async () => {
+  //   try {
+  //     const res = await removeTeam()
+  //     return res
+  //   }catch (e) {
+  //     console.error(e)
+  //   }
+  // }
 
   const players = data?.players || []
+
 
   if (!teams.length) {
     return <h3>No Teams Yet</h3>
@@ -26,14 +39,12 @@ return (
                       >
                       {team.name}
                       </Link>
-                      <PlayerForm />
                     </div>
                     <div>
                       <p>Coach: {team.coach}</p>
                       <p>Season {team.season}</p>
                     </div>
                   </div>
-                   <br />
                   <div style={{ fontSize: '1rem' }}>
                     <PlayerList 
                       players = {players}
