@@ -54,6 +54,21 @@
   justify-content: space-between;  
 }
 
+.teamContainer {
+  width: 80%;
+}
+
+
+.teamButtonRemove {
+  position:absolute;
+  top: 10px;
+  right: 10px;
+  padding: 2px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 50%;
+}
+
 .teamName {
   font-size: 30px;
   color: white
@@ -136,6 +151,10 @@
   transform: rotateY(180deg);
   position: absolute;
   top: 0;
+}
+
+.singlePlayerHeader {
+  text-align: center
 }
 
 .card-flip:hover .card-front {

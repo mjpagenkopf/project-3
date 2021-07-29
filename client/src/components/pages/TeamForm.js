@@ -8,7 +8,7 @@ import { Button, Modal } from 'react-bootstrap'
 const TeamForm = () => {
     const [name, setName] = useState('');
     const [coach, setCoach] = useState('');
-    const [season, setSeason] = useState(''); //only works when number set
+    const [season, setSeason] = useState('');
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);

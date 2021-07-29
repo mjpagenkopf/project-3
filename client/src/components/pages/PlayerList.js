@@ -24,7 +24,7 @@ return (
             players.map((player) => (
                 <tr>
                     <Link
-                    to={`/${player._id}`}>
+                    to={`/players/${player._id}`}>
                     <td className="tdName">{player.name}</td>
                     </Link>
                     <td className="tddata">{player.games}</td>

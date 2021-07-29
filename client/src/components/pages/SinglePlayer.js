@@ -12,6 +12,8 @@ const SingleTeam = () => {
 
     const player = data?.player || {}
 
+    console.log(data)
+
     // const average = (x, y) => {
     //     let ppg = x/y
     //     return Math.round(ppg * 100)/100
@@ -22,9 +24,9 @@ const SingleTeam = () => {
         return <div>Loading...</div>;
       }
       return (
-        <div>
-          {player.name}
-        </div>
+        <div className="card-header">
+              <h2 className="singlePlayerHeader">Compare Yourself To NBA Stars</h2> 
+          </div>
       ); 
 }
 

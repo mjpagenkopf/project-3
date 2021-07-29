@@ -2,8 +2,11 @@ import { useParams } from 'react-router-dom'
 import { useQuery } from '@apollo/client'
 import { Link } from 'react-router-dom'
 
+
 import PlayerForm from './PlayerForm'
 import { QUERY_SINGLE_TEAM } from '../../utils/queries'
+import PlayerList from './PlayerList'
+import UpdatePlayerForm from './UpdatePlayerForm'
 
 const SingleTeam = () => {
     const { teamId } = useParams()
@@ -27,7 +30,7 @@ const SingleTeam = () => {
         <div>
           <div className="card-header">
               <h2>{team.name}</h2>
-              <PlayerForm />
+              <PlayerForm teamId= {team._id}/>
               <h4>Season: {team.season}</h4> 
           </div>
           <div className="container">
@@ -35,9 +38,6 @@ const SingleTeam = () => {
           {team &&
                 team.playersId.map((player) => (
                 <div className="col-sm-4">
-                    <Link 
-                      to={`/players/${player.name}`}
-                      >
                     <div className="card card-flip h-100 playerCardFront">
                             <div className="card-body">
                                 <img className="card-img-top singleTeamPlayerImage" src={`${player.image}`} alt={`${player.name}`}/>
@@ -45,7 +45,11 @@ const SingleTeam = () => {
                         <div className="card-back">
                             <div className="card-body playerCardBack">
                                 <div>
+                                    <Link 
+                                        to={`/players/${player._id}`}
+                                    >
                                     <h2 className="singleTeamPlayerList">{player.name}</h2>
+                                    </Link>
                                     <ul className="singleTeamPlayerList">
                                         <li>Number: {player.number}</li>
                                         <li>Position: {player.position}</li>
@@ -78,13 +82,13 @@ const SingleTeam = () => {
                                                     <td className="padStat" >{average(player.blocks, player.games)}</td>
                                                 </tr>
                                             </tbody>
+                                            <UpdatePlayerForm id = {player._id} />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                      </Link>
                 </div>
         ))} 
         </div>    

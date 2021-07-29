@@ -1,1 +1,1 @@
-export const pages = ['Home', 'Football', 'Basketball', 'Baseball', 'Create', 'TeamForm', 'PlayerForm'];
+export const pages = ['Home', 'Football', 'Baseball', 'Basketball'];

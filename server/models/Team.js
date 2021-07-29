@@ -3,14 +3,12 @@ const {Schema, model} = require("mongoose");
 const TeamSchema = new Schema({  
   name: {
     type: String,
-    trim: true,
-    required: "String is Required"
+    trim: true
   },
 
   coach: {
     type: String,
-    trim: true,
-    required: "String is Required"
+    trim: true
   },
 
   season: {
